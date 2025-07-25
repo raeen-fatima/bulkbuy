@@ -1,3 +1,4 @@
+```
 bulkbuy-app/
 │
 ├── client/                 # Frontend - React App
@@ -26,3 +27,4 @@ bulkbuy-app/
 ├── README.md
 ├── package.json
 └── .gitignore
+```
