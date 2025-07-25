@@ -1,0 +1,14 @@
+bulkbuy-app/
+│
+├── client/                 # Frontend - React App
+│   ├── public/
+│   └── src/
+│       ├── assets/         # Images, icons
+│       ├── components/     # Reusable UI components (Navbar, ProductCard, etc.)
+│       ├── pages/          # Routes/Views (Home, Login, Dashboard, etc.)
+│       ├── context/        # Auth & Global State (React Context or Recoil)
+│       ├── services/       # API calls (Axios or fetch wrappers)
+│       ├── utils/          # Helper functions
+│       ├── App.jsx
+│       ├── main.jsx
+│       └── index.css
