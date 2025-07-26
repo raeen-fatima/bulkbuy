@@ -1,1 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&family=New+Rocker&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
 @import "tailwindcss";
+
+body {
+        font-family: 'Playfair', cursive;
+        background-attachment: fixed;
+        background: linear-gradient(to bottom, #eef2ff, #ffffff);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+        font-family: 'DM Serif Text', serif;
+
+}

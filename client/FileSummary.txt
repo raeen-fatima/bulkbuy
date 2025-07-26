@@ -12,3 +12,37 @@ bulkbuy-app/
 │       ├── App.jsx
 │       ├── main.jsx
 │       └── index.css
+
+
+bulkbuy-frontend/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── GroupProgressBar.jsx
+│   │   ├── ChatBox.jsx
+│   │   ├── OrderCard.jsx
+│   │   └── JoinGroupModal.jsx
+│   ├── pages/
+│   │   ├── vendor/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── GroupDetails.jsx
+│   │   │   ├── Orders.jsx
+│   │   │   └── Chat.jsx
+│   │   ├── supplier/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── AddProduct.jsx
+│   │   │   ├── Groups.jsx
+│   │   │   └── Chat.jsx
+│   │   ├── auth/
+│   │   │   ├── Login.jsx
+│   │   │   └── Signup.jsx
+│   ├── context/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── tailwind.config.js
+├── package.json
+└── README.md
