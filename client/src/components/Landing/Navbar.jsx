@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLeaf, FaBars, FaTimes } from "react-icons/fa";
-import AccountDropdown from "./Account";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +33,7 @@ export default function Navbar() {
           </Link>
 
 
-<AccountDropdown/>
+{/* <AccountDropdown/> */}
 
         </div>
 
@@ -65,7 +64,6 @@ export default function Navbar() {
             Services
           </Link>
 
-          <AccountDropdown/>
 
         </div>
       )}

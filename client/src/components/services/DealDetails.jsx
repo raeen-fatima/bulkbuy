@@ -121,17 +121,20 @@ export default function DealDetails() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <Link
-                to="/login"
+                to="/grouporder"
                 className="bg-blue-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-900 transition text-center"
               >
                 Join Group Order
               </Link>
               <Link
-                to={`/buy/${deal.id}`}
+                to= '/individual'
                 className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
               >
                 Buy Individually
               </Link>
+
+
+
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import AboutUs from "../components/Landing/AboutUs";
+import Bot from "../components/Landing/Bot";
 import CallToAction from "../components/Landing/CallToAction";
 import FeaturesSection from "../components/Landing/FeaturesSection";
 import Footer from "../components/Landing/Footer";
@@ -10,6 +11,7 @@ import TopBox from "../components/Landing/TopBox";
 export default function Landing() {
   return (
     <>
+    
       <HeroSection />
       <AboutUs />
       <HowItWorks />
@@ -17,6 +19,8 @@ export default function Landing() {
       <CallToAction />
       <FeaturesSection />
       <Footer />
+      <Bot />
+
     </>
   );
 }
