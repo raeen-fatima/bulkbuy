@@ -131,31 +131,23 @@ export default function DealDetails() {
               <p className="text-red-700 font-extrabold text-4xl">{deal.discountPrice}</p>
             </div>
 
-            {user ? (
-              <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Link
-                  to={`/buy/${deal.id}?type=group`}
-                  className="bg-blue-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-900 transition text-center"
-                >
-                  Join Group Order
-                </Link>
-                <Link
-                  to={`/buy/${deal.id}?type=single`}
-                  className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
-                >
-                  Buy Individually
-                </Link>
-              </div>
-            ) : (
-              <div className="mt-6">
-                <Link
-                  to="/login"
-                  className="border border-gray-950 text-gray-950 text-sm px-6 py-2 rounded-full shadow hover:bg-gray-950 hover:text-white transition text-center"
-                >
-                  Please Login to Continue
-                </Link>
-              </div>
-            )}
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Link
+                to="/grouporder"
+                className="bg-blue-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-900 transition text-center"
+              >
+                Join Group Order
+              </Link>
+              <Link
+                to= '/individual'
+                className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
+              >
+                Buy Individually
+              </Link>
+
+
+
+            </div>
           </div>
         </div>
       </div>

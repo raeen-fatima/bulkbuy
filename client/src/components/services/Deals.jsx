@@ -153,7 +153,7 @@ export default function DealsPage() {
                   </div>
 
                   <Link
-                    to={`/buy/${deal.id}`}
+                    to= '/individual'
                     onClick={(e) => e.stopPropagation()}
                     className="bg-blue-950 text-white text-xs sm:text-sm px-4 py-2 rounded-full shadow hover:bg-blue-900 transition"
                   >
