@@ -6,7 +6,7 @@ const deals = [
   {
     id: 1,
     title: "Fresh Tomatoes (5kg)",
-    description: "High-quality ripe tomatoes sourced directly from farmers.",
+    description: "High-quality ripe tomatoes sourced directly from farmers and delivered fresh to your doorstep. Perfect for cooking, salads, and more. Join our group order to save more! Limited time offer. Hurry up! make your dishes flavorful with our fresh tomatoes. Join the group order to save more! Limited stock available. Hurry up! This is a great deal for bulk buyers! and save more! Limited stock available. Hurry up!",
     price: "₹120",
     discountPrice: "₹100",
     image:
@@ -16,7 +16,43 @@ const deals = [
     timeLeft: 3600,
   },
   // Add other deals similarly...
+   
+  {
+    id: 2,
+    title: "Onions (10kg)",
+    description: "Farm-fresh onions for everyday use. Long shelf life and rich flavor. Ideal for curries, chutneys, and bulk storage. Join the group and save instantly! Limited stock available. Hurry up! This is a great deal for bulk buyers! and save more! Limited stock available. Hurry up! make your dishes flavorful with our fresh onions. Join the group order to save more! Limited stock available. Hurry up!",
+    price: "₹250",
+    discountPrice: "₹200",
+    image: "https://m.media-amazon.com/images/I/51DJ-9xkuQL._UF1000,1000_QL80_.jpg",
+    groupJoined: 7,
+    groupLimit: 12,
+    timeLeft: 7200,
+  },
+  {
+    id: 3,
+    title: "Cooking Oil (5L)",
+    description: "Pure sunflower oil perfect for deep frying and cooking. Packed in hygienic 5L cans. Bulk savings available. Limited-time group offer - don't miss out! Join now! oil for healthy cooking. Bulk pack at discounted price for group buyers Join the group order to save more! Limited stock available. Hurry up!",
+    price: "₹500",
+    discountPrice: "₹420",
+    image: "https://5.imimg.com/data5/HQ/SB/MY-19588085/sunflower-oil-5ltr.png",
+    groupJoined: 4,
+    groupLimit: 10,
+    timeLeft: 1800,
+  },
+  {
+    id: 4,
+    title: "Green Chilies (2kg)",
+    description: "Fresh, spicy green chilies sourced locally. Enhance the flavor of your dishes. Bulk pack at discounted price for group buyers. Join the group order to save more! Limited stock available. Hurry up! this is a great deal for spice lovers! and save more! Limited stock available. Hurry up!",
+    price: "₹80",
+    discountPrice: "₹65",
+    image: "https://cdn.shopify.com/s/files/1/1489/8850/files/green-chilli_759_480x480.jpg?v=1649307953",
+    groupJoined: 13,
+    groupLimit: 15,
+    timeLeft: 5400,
+  },
 ];
+
+
 
 function formatTime(seconds) {
   const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
@@ -79,8 +115,8 @@ export default function DealDetails() {
             </div>
 
             <div className="flex items-center gap-3 text-lg mt-2">
-              <p className="text-gray-400 line-through">{deal.price}</p>
-              <p className="text-red-700 font-bold text-xl">{deal.discountPrice}</p>
+              <p className="text-gray-400 font-extrabold line-through">{deal.price}</p>
+              <p className="text-red-700 font-extrabold text-4xl">{deal.discountPrice}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -92,7 +128,7 @@ export default function DealDetails() {
               </Link>
               <Link
                 to={`/buy/${deal.id}`}
-                className="bg-green-600 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-green-700 transition text-center"
+                className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
               >
                 Buy Individually
               </Link>
