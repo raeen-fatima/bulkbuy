@@ -3,12 +3,15 @@ import { Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Services from './pages/Services';
 import Navbar from './components/Landing/Navbar';
-// import Footer from './components/Landing/Footer';
+import Footer from './components/Landing/Footer';
 import DealDetails from './components/services/DealDetails';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Register';
 import Raw from './components/services/Raw';
 import TrackOrderService from './components/services/TrackOrder';
+import Bot from './components/Landing/Bot';
+import Individual from './components/services/Individual';
+import Grouporder from './components/services/Grouporder';
 
 const App = () => {
   return (
