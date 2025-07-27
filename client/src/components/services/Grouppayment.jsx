@@ -35,7 +35,7 @@ export default function GroupPaymentSection() {
   );
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg max-w-3xl mx-auto mt-10">
+    <div className="bg-gradient-to-b from-indigo-50 to-indigo-200  p-6 rounded shadow-lg max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6 text-center">Group Order Summary</h2>
 
       {groupMembers.map((member, idx) => (
@@ -47,13 +47,13 @@ export default function GroupPaymentSection() {
             <p className="text-sm text-gray-500">{member.address}</p>
           </div>
           <div className="flex gap-3 items-center">
-            <span className="text-green-700 font-semibold">₹{member.qty * itemPrice}</span>
+            <span className="text-red-500 font-semibold">₹{member.qty * itemPrice}</span>
             {member.hasPaid ? (
               <span className="text-green-600 text-sm">✅ Paid</span>
             ) : (
               <button
                 onClick={() => handleDummyPayment(idx)}
-                className="bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600"
+                className="bg-gray-950 text-white px-4 py-1 rounded hover:bg-blue-950 transition"
               >
                 Dummy Pay
               </button>
