@@ -12,7 +12,6 @@ import TrackOrderService from './components/services/TrackOrder';
 import Profile from './components/Landing/Profile';
 import Notification from './components/Landing/Notification';
 import Logout from './components/Landing/Logout';
-
 const App = () => {
   return (
     <>
@@ -29,6 +28,7 @@ const App = () => {
          <Route path="/notification" element={<Notification />} />
          <Route path="/logout" element={<Logout />} />
       </Routes>
+      <Footer />
     </>
   );
 };
