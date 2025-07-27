@@ -1,22 +1,28 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaTimes } from 'react-icons/fa';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../config/Firebase'; // make sure this path is correct
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    localStorage.setItem('user', JSON.stringify({ email }));
-    navigate('/');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/');
+    } catch (err) {
+      setError("Invalid email or password.");
+    }
   };
 
   return (
     <div className="h-160 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
       <div className="bg-white shadow-2xl rounded p-8 pt-12 w-full max-w-md border border-gray-400 relative">
-        {/* Cross icon inside the card */}
         <Link
           to="/"
           className="absolute top-4 right-4 text-gray-500 hover:text-blue-950 text-lg transition"
@@ -28,6 +34,13 @@ export default function Login() {
         <h2 className="text-3xl font-extrabold text-center text-gray-950 mb-8 tracking-tight">
           Welcome Back 👋
         </h2>
+
+        {error && (
+          <div className="text-sm text-red-600 mb-4 text-center font-medium">
+            {error}
+          </div>
+        )}
+
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label className="block mb-1 font-medium text-blue-950">Email Address</label>

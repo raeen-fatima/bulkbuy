@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
-import { FaUsers, FaTags, FaClock, FaFire } from "react-icons/fa";
+import { FaUsers, FaTags, FaClock, FaFire, FaSearch, FaSortAmountDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-const deals = [
+const initialDeals = [
   {
     id: 1,
     title: "Fresh Tomatoes (5kg)",
     price: "₹120",
     discountPrice: "₹100",
-    image:
-      "https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN313-Tomatoes-732x549-Thumb-732x549.jpg",
+    image: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN313-Tomatoes-732x549-Thumb-732x549.jpg",
     groupJoined: 10,
     groupLimit: 15,
     timeLeft: 3600,
@@ -19,8 +18,7 @@ const deals = [
     title: "Onions (10kg)",
     price: "₹250",
     discountPrice: "₹200",
-    image:
-      "https://m.media-amazon.com/images/I/51DJ-9xkuQL._UF1000,1000_QL80_.jpg",
+    image: "https://m.media-amazon.com/images/I/51DJ-9xkuQL._UF1000,1000_QL80_.jpg",
     groupJoined: 7,
     groupLimit: 12,
     timeLeft: 7200,
@@ -40,8 +38,7 @@ const deals = [
     title: "Green Chilies (2kg)",
     price: "₹80",
     discountPrice: "₹65",
-    image:
-      "https://cdn.shopify.com/s/files/1/1489/8850/files/green-chilli_759_480x480.jpg?v=1649307953",
+    image: "https://cdn.shopify.com/s/files/1/1489/8850/files/green-chilli_759_480x480.jpg?v=1649307953",
     groupJoined: 13,
     groupLimit: 15,
     timeLeft: 5400,
@@ -56,13 +53,25 @@ function formatTime(seconds) {
 }
 
 export default function DealsPage() {
-  const [timers, setTimers] = useState(deals.map((deal) => deal.timeLeft));
+  const [timers, setTimers] = useState(initialDeals.map((deal) => deal.timeLeft));
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("none");
+
+  const filteredDeals = initialDeals
+    .filter((deal) => deal.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      if (sortBy === "price") {
+        return parseInt(a.discountPrice.slice(1)) - parseInt(b.discountPrice.slice(1));
+      }
+      if (sortBy === "time") {
+        return a.timeLeft - b.timeLeft;
+      }
+      return 0;
+    });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimers((prev) =>
-        prev.map((time) => (time > 0 ? time - 1 : 0))
-      );
+      setTimers((prev) => prev.map((time) => (time > 0 ? time - 1 : 0)));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -70,18 +79,43 @@ export default function DealsPage() {
   return (
     <section className=" bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-14 sm:mb-16">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8 sm:mb-10">
           Available Bulk Deals
         </h1>
 
+        {/* Search and Sort */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
+          <div className="flex items-center border rounded-full bg-white px-4 py-2 w-full sm:w-1/2 shadow">
+            <FaSearch className="text-gray-400 mr-2" />
+            <input
+              type="text"
+              placeholder="Search items..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full outline-none text-sm"
+            />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FaSortAmountDown className="text-gray-500" />
+            <select
+              onChange={(e) => setSortBy(e.target.value)}
+              className="text-sm border rounded px-3 py-2 shadow bg-white"
+            >
+              <option value="none">Sort By</option>
+              <option value="price">Price (Low to High)</option>
+              <option value="time">Time Left</option>
+            </select>
+          </div>
+        </div>
+
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {deals.map((deal, index) => (
+          {filteredDeals.map((deal, index) => (
             <Link
               to={`/deals/${deal.id}`}
               key={deal.id}
               className="bg-gradient-to-b from-indigo-50 to-indigo-100 rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-300 block"
             >
-              {/* Image with labels */}
               <div className="relative h-56 w-full overflow-hidden">
                 <img
                   src={deal.image}
@@ -93,11 +127,10 @@ export default function DealsPage() {
                 </div>
                 <div className="absolute bottom-2 right-2 bg-white text-red-700 text-xs px-3 py-1 rounded-full shadow flex items-center gap-1">
                   <FaClock className="text-red-700" />
-                  <span className="font-medium">{formatTime(timers[index])}</span>
+                  <span className="font-medium">{formatTime(timers[deal.id - 1])}</span>
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-5 flex flex-col gap-4">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 leading-snug">
                   {deal.title}

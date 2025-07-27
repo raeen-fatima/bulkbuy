@@ -33,7 +33,9 @@ export default function HeroSection() {
           </p>
 
           <Link to="/signup">
+
             <button className="mt-6 cursor-pointer mx-auto md:mx-0 flex items-center gap-2 px-6 py-3 border-2 border-blue-950 hover:bg-blue-950 hover:text-white text-blue-950 rounded-full shadow-md transition duration-300">
+
               <FaHandHoldingUsd className="text-xl" />
               Join Now
             </button>
