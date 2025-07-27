@@ -22,7 +22,7 @@ export default function CallToAction() {
           Join hundreds of street vendors using BULKBUY to access bulk deals, trusted suppliers, and real-time support.
         </p>
         <Link to="/signup">
-          <button className="px-6 sm:px-8 py-3 bg-white text-gray-950 font-semibold rounded-full text-base sm:text-lg shadow-lg hover:bg-indigo-100 active:scale-95 transition">
+          <button className="px-6 sm:px-8 cursor-pointer py-3 bg-white text-gray-950 font-semibold rounded-full text-base sm:text-lg shadow-lg hover:bg-indigo-100 active:scale-95 transition">
             Get Started →
           </button>
         </Link>
