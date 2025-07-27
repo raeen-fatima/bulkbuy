@@ -12,17 +12,18 @@ export default function CallToAction() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-4xl mx-auto text-center px-4"
+        viewport={{ once: true }}
+        className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6"
       >
-        <h2 className="text-4xl font-bold leading-tight mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug sm:leading-tight mb-4">
           Ready to save more with every purchase?
         </h2>
-        <p className="text-lg text-indigo-100 mb-8">
+        <p className="text-base sm:text-lg text-indigo-100 mb-8 max-w-2xl mx-auto">
           Join hundreds of street vendors using BULKBUY to access bulk deals, trusted suppliers, and real-time support.
         </p>
         <Link to="/signup">
-          <button className="px-8 py-3 bg-white text-blue-950 font-semibold rounded-full text-lg shadow-lg hover:bg-indigo-100 transition">
-            Get Started → 
+          <button className="px-6 sm:px-8 py-3 bg-white text-gray-950 font-semibold rounded-full text-base sm:text-lg shadow-lg hover:bg-indigo-100 active:scale-95 transition">
+            Get Started →
           </button>
         </Link>
       </motion.div>

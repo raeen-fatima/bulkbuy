@@ -68,19 +68,20 @@ export default function DealsPage() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-4">
+    <section className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-16 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-14 sm:mb-16">
           Available Bulk Deals
         </h1>
 
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {deals.map((deal, index) => (
             <Link
               to={`/deals/${deal.id}`}
               key={deal.id}
               className="bg-gradient-to-b from-indigo-50 to-indigo-100 rounded-xl shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-300 block"
             >
+              {/* Image with labels */}
               <div className="relative h-56 w-full overflow-hidden">
                 <img
                   src={deal.image}
@@ -95,31 +96,33 @@ export default function DealsPage() {
                   <span className="font-medium">{formatTime(timers[index])}</span>
                 </div>
               </div>
+
+              {/* Content */}
               <div className="p-5 flex flex-col gap-4">
-                <h3 className="text-lg font-semibold text-gray-800 leading-snug">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 leading-snug">
                   {deal.title}
                 </h3>
 
-                <div className="flex justify-between items-center text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
+                <div className="flex justify-between items-center text-xs sm:text-sm text-gray-600">
+                  <div className="flex items-center gap-1 sm:gap-2">
                     <FaUsers className="text-blue-950" />
                     {deal.groupJoined}/{deal.groupLimit} joined
                   </div>
-                  <div className="flex items-center gap-2 text-blue-950 bg-blue-200 px-2 py-1 rounded-md">
-                    <FaTags className="text-sm" /> Save with group
+                  <div className="flex items-center gap-1 sm:gap-2 text-blue-950 bg-blue-200 px-2 py-1 rounded-md">
+                    <FaTags className="text-sm" /> Group Save
                   </div>
                 </div>
 
                 <div className="flex justify-between items-center mt-2">
                   <div className="flex items-center gap-2">
                     <p className="text-gray-400 line-through text-sm">{deal.price}</p>
-                    <p className="text-red-700 font-bold text-lg">{deal.discountPrice}</p>
+                    <p className="text-red-700 font-bold text-base sm:text-lg">{deal.discountPrice}</p>
                   </div>
 
                   <Link
                     to={`/buy/${deal.id}`}
                     onClick={(e) => e.stopPropagation()}
-                    className="bg-blue-950 text-white text-sm px-4 py-2 rounded-full shadow hover:bg-blue-900 transition"
+                    className="bg-blue-950 text-white text-xs sm:text-sm px-4 py-2 rounded-full shadow hover:bg-blue-900 transition"
                   >
                     Buy Now
                   </Link>

@@ -33,7 +33,7 @@ export default function HeroSection() {
           </p>
 
           <Link to="/signup">
-            <button className="mt-6 flex items-center gap-2 px-6 py-3 border-2 border-blue-950 hover:bg-blue-950 hover:text-white text-blue-950 rounded-full shadow-lg transition">
+            <button className="mt-6 mx-auto md:mx-0 flex items-center gap-2 px-6 py-3 border-2 border-blue-950 hover:bg-blue-950 hover:text-white text-blue-950 rounded-full shadow-md transition duration-300">
               <FaHandHoldingUsd className="text-xl" />
               Join Now
             </button>
@@ -47,7 +47,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9 }}
           src="https://media.istockphoto.com/id/154959807/photo/good-boat-in-the-floating-market-in-bangkok-thailand.jpg?s=612x612&w=0&k=20&c=oX9JE4yJKNVNfIXuaLzat3-iFDozuP_mb0EzC9-g_HE=" // You can change this image
           alt="Community Vendors"
-          className="w-[400px] h-[400px] max-w-full rounded-t-full shadow-md"
+          className="w-64 sm:w-80 md:w-[400px] md:h-[400px] h-[200px]  rounded-t-full shadow-md"
         />
       </div>
     </section>

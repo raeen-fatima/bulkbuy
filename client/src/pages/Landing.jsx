@@ -1,24 +1,20 @@
 import AboutUs from "../components/Landing/AboutUs";
 import CallToAction from "../components/Landing/CallToAction";
 import FeaturesSection from "../components/Landing/FeaturesSection";
-import Footer from "../components/Landing/Footer";
 import HeroSection from "../components/Landing/HeroSection";
 import HowItWorks from "../components/Landing/HowItWorks";
-import Navbar from "../components/Landing/Navbar";
 import TopBox from "../components/Landing/TopBox";
 
 
 export default function Landing() {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <AboutUs />
       <HowItWorks />
       <TopBox />
       <CallToAction />
       <FeaturesSection />
-      <Footer />
     </>
   );
 }
