@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaLeaf, FaBars, FaTimes } from "react-icons/fa";
+
+import AccountDropdown from "./Account";
+
 import { auth } from "../../config/Firebase"; 
 import { onAuthStateChanged, signOut } from "firebase/auth";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +66,10 @@ export default function Navbar() {
           >
             Services
           </Link>
+
+
+<AccountDropdown/>
+
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -108,8 +116,16 @@ export default function Navbar() {
           >
             Services
           </Link>
+
+          <AccountDropdown/>
+
         </div>
       )}
+
+      
     </header>
+
+
+
   );
 }

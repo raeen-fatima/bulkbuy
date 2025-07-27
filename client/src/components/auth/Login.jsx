@@ -21,7 +21,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
+    <div className="h-160 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
       <div className="bg-white shadow-2xl rounded p-8 pt-12 w-full max-w-md border border-gray-400 relative">
         <Link
           to="/"
@@ -74,7 +74,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-gray-950 hover:bg-blue-900 text-white py-2 rounded-full text-sm font-semibold shadow transition duration-300"
+            className="w-full cursor-pointer bg-gray-950 hover:bg-blue-900 text-white py-2 rounded-full text-sm font-semibold shadow transition duration-300"
           >
             Sign in
           </button>
