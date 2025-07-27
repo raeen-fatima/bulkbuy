@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { FaSearch, FaHandshake, FaMapMarkedAlt } from "react-icons/fa";
 
 const steps = [
@@ -72,11 +73,21 @@ export default function HowItWorks() {
               </div>
 
               {/* Step Number Circle */}
-              <div className="flex justify-center items-center">
+
+
+
+
+
+             <button className="">
+               <div className="flex justify-center items-center cursor-pointer">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-blue-950 text-blue-950 font-bold text-lg sm:text-xl flex items-center justify-center shadow-xl bg-blue-950/60 backdrop-blur-sm hover:scale-105 transition-transform">
                   0{index + 1}
                 </div>
               </div>
+          </button>
+
+
+      
             </motion.div>
           ))}
         </div>
@@ -88,9 +99,18 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center mt-20"
         >
-          <button className="px-6 sm:px-8 py-3 bg-blue-950 hover:bg-blue-900 text-white rounded-full text-base sm:text-lg shadow-lg transition">
+   
+
+
+              <Link
+            to="/raw"
+          >
+             <button className="px-6 sm:px-8 cursor-pointer py-3 bg-blue-950 hover:bg-blue-900 text-white rounded-full text-base sm:text-lg shadow-lg transition">
             Explore Raw Material Deals →
           </button>
+          </Link>
+
+
         </motion.div>
       </div>
     </section>

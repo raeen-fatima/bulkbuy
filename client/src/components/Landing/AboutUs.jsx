@@ -1,6 +1,10 @@
 import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function AboutUs() {
+
+    
+  
+  
   return (
     <section className="bg-gradient-to-b from-indigo-50 to-white py-20 px-4 text-center">
      
@@ -44,9 +48,9 @@ export default function AboutUs() {
       </div>
 
       {/* Circular Social Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-md mx-auto mt-12">
-        <CircleCard icon={<FaYoutube />} label="14K+" subtext="SUBSCRIBE" />
-        <CircleCard icon={<FaInstagram />} label="14K+" subtext="FOLLOW US" />
+      <div  className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-6 max-w-md mx-auto mt-12">
+        <div className="cursor-pointer" onClick={ ()=>{}}><CircleCard icon={<FaYoutube />} label="14K+" subtext="SUBSCRIBE" /></div>
+       <div className="cursor-pointer" onClick={()=>{}}> <CircleCard icon={<FaInstagram />} label="14K+" subtext="FOLLOW US"  /></div>
       </div>
     </section>
   );

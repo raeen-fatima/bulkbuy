@@ -68,7 +68,7 @@ export default function DealsPage() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-6">
+    <section className=" bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-14 sm:mb-16">
           Available Bulk Deals

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaTags, FaUserCheck, FaComments } from "react-icons/fa";
+import Footer from "./Footer";
 
 function Feature({ title, desc, icon }) {
   return (
@@ -42,6 +43,8 @@ export default function FeaturesSection() {
             desc="Only trusted and rated suppliers are listed for orders."
             icon={<FaUserCheck />}
           />
+
+         
           <Feature
             title="Live Chat"
             desc="Stay connected with your vendor group and supplier anytime."
@@ -50,5 +53,6 @@ export default function FeaturesSection() {
         </div>
       </div>
     </section>
+    
   );
 }
