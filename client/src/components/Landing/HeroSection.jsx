@@ -5,7 +5,7 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-b from-indigo-50 to-white py-20 px-6">
+    <section className="bg-gradient-to-b from-indigo-100 to-indigo-200 py-20 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         
         {/* Left Content */}

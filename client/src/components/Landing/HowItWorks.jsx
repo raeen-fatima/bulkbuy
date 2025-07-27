@@ -25,15 +25,15 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-16  px-6 relative">
+    <section className="py-16 bg-gradient-to-b from-indigo-100 to-indigo-300 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-gray-800 mb-20"
+          className="text-5xl font-bold text-center text-gray-800 mb-20"
         >
-          How BULKBUY Helps Vendors
+          How BulkBuy Helps Vendors
         </motion.h2>
 
         <div className="space-y-24 relative z-10">

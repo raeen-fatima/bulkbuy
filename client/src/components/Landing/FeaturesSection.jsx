@@ -7,9 +7,9 @@ function Feature({ title, desc, icon }) {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.4 }}
-      className="bg-white/70 backdrop-blur-md p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition"
+      className="bg-gradient-to-b from-indigo-50 to-indigo-200  backdrop-blur-md p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition"
     >
-      <div className="w-12 h-12 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full mb-4 mx-auto text-xl">
+      <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-b from-indigo-100 to-indigo-200 text-blue-950 rounded-full mb-4 mx-auto text-xl">
         {icon}
       </div>
       <h4 className="text-lg font-semibold text-gray-800">{title}</h4>

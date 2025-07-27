@@ -18,15 +18,15 @@ export default function Navbar() {
         <div className="space-x-3">
           <Link
             to="/login"
-            className="text-blue-900 font-medium hover:text-blue-950 transition"
+            className="text-blue-950 border-2 border-blue-950 py-1 px-3 rounded-full font-medium hover:bg-blue-950 hover:text-white transition"
           >
-            Login
+            Login/Sign Up
           </Link>
           <Link
-            to="/signup"
-            className="bg-blue-950 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-blue-900 transition"
+            to="/services"
+            className="bg-blue-950 text-white px-5 py-2 rounded-full font-medium shadow-md hover:bg-blue-900 transition"
           >
-            Sign Up
+            Services
           </Link>
         </div>
       </div>
