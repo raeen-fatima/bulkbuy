@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { FaUsers, FaTags, FaClock } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const deals = [
   {
@@ -65,12 +66,23 @@ export default function DealDetails() {
   const { id } = useParams();
   const deal = deals.find((item) => item.id === Number(id));
   const [timer, setTimer] = useState(deal?.timeLeft || 0);
+  const [user, setUser] = useState(null); // ✅ Track Firebase User
 
+  // ⏱ Countdown Timer
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
     return () => clearInterval(interval);
+  }, []);
+
+  // 🔐 Check Firebase Auth User
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+    });
+    return () => unsubscribe();
   }, []);
 
   if (!deal)
@@ -96,7 +108,7 @@ export default function DealDetails() {
             </div>
           </div>
 
-          {/* Text & Action Section */}
+          {/* Content Section */}
           <div className="p-6 sm:p-8 flex flex-col gap-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
               {deal.title}
@@ -119,20 +131,31 @@ export default function DealDetails() {
               <p className="text-red-700 font-extrabold text-4xl">{deal.discountPrice}</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Link
-                to="/login"
-                className="bg-blue-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-900 transition text-center"
-              >
-                Join Group Order
-              </Link>
-              <Link
-                to={`/buy/${deal.id}`}
-                className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
-              >
-                Buy Individually
-              </Link>
-            </div>
+            {user ? (
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <Link
+                  to={`/buy/${deal.id}?type=group`}
+                  className="bg-blue-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-900 transition text-center"
+                >
+                  Join Group Order
+                </Link>
+                <Link
+                  to={`/buy/${deal.id}?type=single`}
+                  className="bg-gray-950 text-white text-sm px-5 py-2 rounded-full shadow hover:bg-blue-950 transition text-center"
+                >
+                  Buy Individually
+                </Link>
+              </div>
+            ) : (
+              <div className="mt-6">
+                <Link
+                  to="/login"
+                  className="border border-gray-950 text-gray-950 text-sm px-6 py-2 rounded-full shadow hover:bg-gray-950 hover:text-white transition text-center"
+                >
+                  Please Login to Continue
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
