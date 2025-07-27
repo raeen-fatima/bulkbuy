@@ -87,7 +87,7 @@ export default function Bot() {
       {!show && (
         <button
           onClick={() => setShow(true)}
-          className="cursor-pointer fixed bottom-5 right-6 z-50 p-4 bg-gradient-to-r from-indigo-500 to-blue-700 rounded-full shadow-lg text-white text-2xl hover:scale-110 transition"
+          className="cursor-pointer fixed bottom-5 right-6 z-50 p-4 bg-gradient-to-r from-indigo-800 to-blue-950 rounded-full shadow-lg text-white text-2xl hover:scale-110 transition"
           aria-label="Open Chatbot"
         >
           <FiMessageCircle />

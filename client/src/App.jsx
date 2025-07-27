@@ -29,6 +29,7 @@ const App = () => {
             <Route path="/individual" element={<Individual />} />
              <Route path="/grouporder" element={<Grouporder />} />
       </Routes>
+      <Bot />
       <Footer />
     </>
   );

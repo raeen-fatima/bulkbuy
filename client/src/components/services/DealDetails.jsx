@@ -93,8 +93,8 @@ export default function DealDetails() {
     );
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-100 to-white py-12 px-4 sm:px-6">
-      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+    <section className="min-h-screen  py-12 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto   overflow-hidden">
         <div className="grid md:grid-cols-2">
           {/* Image Section */}
           <div className="relative">
